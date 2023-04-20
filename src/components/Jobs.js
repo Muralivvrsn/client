@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Home from "./Home";
-import Pagination from '@material';
 import Job from "./Job";
 function Jobs() {
 
@@ -24,7 +23,6 @@ function Jobs() {
     <div>
       <Home />
       <Job data={"HELLO"}/>
-      <Pagination count={10} color="secondary" />
       <div className="jobs">
         {response && response.data &&
           response.data.map((data) => <Job data={data} />)}

@@ -5,6 +5,7 @@ import Onboard from "./Onboard";
 import Home from "./Home";
 import Jobs from './Jobs';
 import Loading from "./extraCredentails/Loading";
+import Email from "./EmailVerification";
 
 import "../App.css";
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/login" exact element={<Login />}></Route>
           <Route path="/home" exact element={<Home />}></Route>
           <Route path="/Jobs" exact element={<Jobs/>}></Route>
+          <Route path="/email-verify" exact element={<Email/>}></Route>
         </Routes>
         
       </div>

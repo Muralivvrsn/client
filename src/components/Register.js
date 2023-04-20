@@ -29,15 +29,9 @@ function Register() {
   const handleSubmit = async (e) => {
     dispatch(loadingActions.startLoading());
     e.preventDefault();
-    setErrors((prev) => ({
-      ...prev,
-      confirmPassword: validConfirmPassword(password, cPassword),
-    }));
-    setErrors((prev) => ({ ...prev, password: validPassword(password) }));
-    setErrors((prev) => ({ ...prev, email: validEmail(email) }));
-    setErrors((prev) => ({ ...prev, name: validName(name) }));
+
+    setErrors((prev) => ({ ...prev, password: validPassword(password),email: validEmail(email), name: validName(name),confirmPassword: validConfirmPassword(password, cPassword) }));
     if (Object.values(errors).every((x) => x === null || x === "")) {
-      console.log("Going...")
       const res = await axios
         .post("http://localhost:4000/api/register", {
           name,
@@ -54,7 +48,7 @@ function Register() {
 
       console.log(res);
       if (res.status === 200) {
-        navigate("/login");
+        navigate("/email-verify",{state:{email:email}});
       }
     } else {
       setText("Please provide correct information");

@@ -38,7 +38,7 @@ function Login() {
         .catch((err) => {
           dispatch(errorActions.hasError())
           console.log(err)
-          setText(err.data=="" || err.data==null?"Something Went Wrong!!":err.data);
+          setText(err.response.data=="" || err.response.data==null?"Something Went Wrong!!":err.response.data);
           return err;
         });
         console.log(res)
