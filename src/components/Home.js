@@ -26,7 +26,7 @@ function Home() {
         if(!login){
             navigate('/login');
         }
-    },[])
+    })
   return (
     <div>
       <header className='header'>
