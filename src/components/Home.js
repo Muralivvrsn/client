@@ -17,6 +17,7 @@ function Home() {
         console.log(res);
         setData(res);
         setValue(false);
+        console.log(data)
     }
     if(set){
         getData()

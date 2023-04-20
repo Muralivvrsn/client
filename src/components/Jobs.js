@@ -17,6 +17,7 @@ function Jobs() {
       .catch((err) => {
         console.log("FAILURE");
       });
+      console.log(Res)
       
   },[]);
   return (
