@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React,{useState} from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 const EmailVerification = () => {
   const [otp , setOTP] = useState(null);
   const navigate = useNavigate()
@@ -18,7 +18,7 @@ const EmailVerification = () => {
    setOTP(res)
   }
   const onSubmit = ()=>{
-    if(Otp == otp){
+    if(parseInt(Otp)===otp){
       console.log("verification successfulll")
       navigate("/login")
     }else{
