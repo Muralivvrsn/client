@@ -7,7 +7,7 @@ const EmailVerification = () => {
   const [Otp, recievedOTP] = useState();
   const location = useLocation();
   const resendOTP = async()=>{
-    const res = await axios.post("http://localhost:4000/api/send-otp",{
+    const res = await axios.post("https://job-portal-poo4.onrender.com/api/send-otp",{
         email:location.state.email
     }).then((res)=>{
       return res.data

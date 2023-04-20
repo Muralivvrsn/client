@@ -33,7 +33,7 @@ function Register() {
     setErrors((prev) => ({ ...prev, password: validPassword(password),email: validEmail(email), name: validName(name),confirmPassword: validConfirmPassword(password, cPassword) }));
     if (Object.values(errors).every((x) => x === null || x === "")) {
       const res = await axios
-        .post("http://localhost:4000/api/register", {
+        .post("https://job-portal-poo4.onrender.com/api/register", {
           name,
           email,
           password,

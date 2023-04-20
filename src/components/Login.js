@@ -25,7 +25,7 @@ function Login() {
     if (Object.values(errors).every((x) => x === null || x === "")) {
      
       const res = await axios
-        .get("http://localhost:4000/api/login", {
+        .get("https://job-portal-poo4.onrender.com/api/login", {
           params:{
             email:email,
             password:password

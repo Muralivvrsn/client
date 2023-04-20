@@ -13,7 +13,7 @@ function Home() {
     const [data, setData] =  useState(null);
     const [set, setValue] = useState(true)
     const getData = async()=>{
-        const res = await axios.get("http://localhost:4000/api/home").then((res)=>{return res})
+        const res = await axios.get("https://job-portal-poo4.onrender.com/api/home").then((res)=>{return res})
         console.log(res);
         setData(res);
         setValue(false);

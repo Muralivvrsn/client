@@ -7,7 +7,7 @@ function Jobs() {
   const [response, setResponse] = useState(null);
   useEffect(() => {
     const Res = axios
-      .get("http://localhost:4000/api/jobs")
+      .get("https://job-portal-poo4.onrender.com/api/jobs")
       .then((res) => {
         console.log("SUCCESS")
         return res;
