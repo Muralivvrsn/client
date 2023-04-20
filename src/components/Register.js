@@ -4,6 +4,7 @@ import { useDispatch} from 'react-redux';
 import { errorActions }  from '../store/Error';
 import { loadingActions } from "../store/Loading";
 import Swrong from './extraCredentails/Swrong'
+import {motion} from 'framer-motion'
 import {
   validEmail,
   validName,
@@ -47,7 +48,7 @@ function Register() {
         });
 
       console.log(res);
-      if (res.status === 200) {
+      if (res && res.status === 200) {
         navigate("/email-verify",{state:{email:email}});
       }
     } else {
@@ -57,7 +58,13 @@ function Register() {
     dispatch(loadingActions.stopLoading());
   };
   return (
-    <div>
+
+      <motion.div
+        initial={{ opacity: 0, x: "-100vw" }}
+        animate={{ opacity: 1, x: "0" }}
+        transition={{ duration: 1.2 }}
+        exit={{ opacity: 0, x: "-100vw" }}
+      >
       <Swrong text={text} />
       <div>
         <div className="signup-form shadow bg-body rounded">
@@ -167,7 +174,7 @@ function Register() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 export default Register;

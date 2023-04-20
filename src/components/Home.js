@@ -28,7 +28,7 @@ function Home() {
         }
     })
   return (
-    <div>
+    <div >
       <header className='header'>
         <nav className='header-nav'>
           <Link to="/home"><img src={logo} alt=""  className='logo'/></Link>

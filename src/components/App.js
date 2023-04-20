@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes} from "react-router-dom";
 import Register from "./Register";
 import Login from "./Login";
 import Onboard from "./Onboard";
@@ -6,11 +6,13 @@ import Home from "./Home";
 import Jobs from './Jobs';
 import Loading from "./extraCredentails/Loading";
 import Email from "./EmailVerification";
+import { AnimatePresence } from "framer-motion"; 
 
 import "../App.css";
 function App() {
   
   return (
+    <AnimatePresence>
     <BrowserRouter>
       <Loading />
       <div className="App">
@@ -25,6 +27,7 @@ function App() {
         
       </div>
     </BrowserRouter>
+    </AnimatePresence>
   );
 }
 
